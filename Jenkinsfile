@@ -3,6 +3,10 @@ pipeline {
     environment {
         registry = "633346295112.dkr.ecr.us-east-1.amazonaws.com/my-docker-repo"
     }
+
+    triggers {
+        githubPush() // Triggers on GitHub commit
+    }
     
     stages {
         stage('Checkout') {
